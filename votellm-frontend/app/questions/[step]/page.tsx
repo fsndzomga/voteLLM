@@ -22,7 +22,7 @@ const QuestionPage = ({ params }: { params: Params }) => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/generate_questions');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/generate_questions`);
         const data = await response.json();
         setQuestions(data.questions);
         // store questions in localStorage

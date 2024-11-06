@@ -98,7 +98,7 @@ const ResultsPage = () => {
 
       if (answers && voteChoice) {
         try {
-          const response = await fetch('http://127.0.0.1:5000/submit_answers', {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/submit_answers`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

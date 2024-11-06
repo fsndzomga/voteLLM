@@ -4,3 +4,4 @@ openai
 python-dotenv
 Flask-Caching
 pandas
+gunicorn
