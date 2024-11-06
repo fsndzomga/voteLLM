@@ -15,7 +15,7 @@ import { useRouter } from 'next/navigation';
 import { images } from './images';
 import Image from 'next/image';
 
-export function SkeletonCard() {
+function SkeletonCard() {
   return (
     <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center max-h-screen p-4 font-[family-name:var(--font-geist-sans)]'>
       <div className='flex flex-col gap-[0.5rem] row-start-2 items-center max-w-[580px]'>
@@ -26,9 +26,9 @@ export function SkeletonCard() {
   );
 }
 
-export function CarouselPlugin({ state }) {
+function CarouselPlugin({ state }: { state: string }) {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
-  const stateImages = images[state] || [];
+  const stateImages = images[state as keyof typeof images] || [];
 
   return (
     <Carousel
@@ -56,7 +56,7 @@ export function CarouselPlugin({ state }) {
   );
 }
 
-export function TextareaWithButton({ description }) {
+function TextareaWithButton({ description }: { description: string }) {
   const router = useRouter();
 
   return (
@@ -73,7 +73,7 @@ type Profile = {
   city: string;
 };
 
-export function ResultCard({ profile }) {
+function ResultCard({ profile }: { profile: Profile }) {
   return (
     <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center max-h-screen p-4 font-[family-name:var(--font-geist-sans)]'>
       <div className='flex flex-col gap-[0.5rem] row-start-2 items-center max-w-[580px]'>

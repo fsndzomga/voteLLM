@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Discover the hypothetical battleground voter within you!",
 };
 
-export const Header = () => {
+const Header = () => {
   return (
     <header className="flex items-center justify-between p-4 bg-white  border-b border-gray-150">
       {/* GitHub Link */}

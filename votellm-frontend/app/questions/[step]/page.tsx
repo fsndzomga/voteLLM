@@ -17,7 +17,7 @@ const QuestionPage = ({ params }: { params: Params }) => {
 
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [answers, setAnswers] = useState([]);
+  const [answers, setAnswers] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -39,7 +39,7 @@ const QuestionPage = ({ params }: { params: Params }) => {
     setAnswers(savedAnswers);
   }, []);
 
-  const handleAnswer = (answer) => {
+  const handleAnswer = (answer: string) => {
     const updatedAnswers = [...answers, answer];
     setAnswers(updatedAnswers);
 
