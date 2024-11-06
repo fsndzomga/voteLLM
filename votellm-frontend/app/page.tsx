@@ -6,10 +6,6 @@ import { useEffect } from "react";
 
 export default function Home() {
 
-  // send a request to the /ping endpoint to wake up the backend
-  useEffect(() => {
-    fetch("/ping");
-  }, []);
 
   useEffect(() => {
     // Clear the localStorage only on the client side

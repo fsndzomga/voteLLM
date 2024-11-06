@@ -266,11 +266,6 @@ def generate_user_profile(questions, answers, vote_choice):
     }
 
 
-@app.route('/ping', methods=['GET'])
-def ping():
-    return jsonify({"message": "pong"})
-
-
 @app.route('/generate_questions', methods=['GET'])
 def get_questions():
     questions = generate_questions()
