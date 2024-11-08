@@ -11,10 +11,6 @@ export default function Home() {
     // Clear the localStorage only on the client side
     if (typeof window !== "undefined") {
       localStorage.clear();
-      // clear questions, answers, and voteChoice
-      localStorage.removeItem('questions');
-      localStorage.removeItem('answers');
-      localStorage.removeItem('voteChoice');
     }
   }, []);
 
