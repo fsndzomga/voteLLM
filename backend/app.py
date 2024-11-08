@@ -4,20 +4,11 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 import re
-from flask_caching import Cache
 import random
 import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
-
-# Configure caching
-app.config['CACHE_TYPE'] = 'simple'  # Use 'redis' for Redis caching
-app.config['CACHE_DEFAULT_TIMEOUT'] = 120  # Default cache timeout of 120 seconds (2 minutes)
-cache = Cache(app)
-
-# Initialize the cache
-cache.init_app(app)
 
 load_dotenv()
 
