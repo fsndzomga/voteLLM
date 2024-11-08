@@ -228,8 +228,10 @@ def extract_profile_data(response_content):
 def generate_user_profile(questions, answers, vote_choice):
     # Generate a response based on answers and vote choice
 
-    prompt = f"""Given the questions {questions}, answers {answers} and vote choice {vote_choice},
-    assign a likely battleground state and city.
+    data = [f"To the question: {question}, the user answered: {answer}" for question, answer in zip(questions, answers)] + [f"The user's would vote for: {vote_choice}"]
+
+    prompt = f"""Given the following answers to questions about the 2024 US election campaign: {data}
+    Assign a likely battleground state and city of the user based on their answers.
     Here are some background details on a few battleground states:
     {battleground_states}
     Describe this hypothetical person's personality and what kind of voter
